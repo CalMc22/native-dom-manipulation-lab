@@ -18,31 +18,66 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   // Part 1
 
+document.getElementById("main-title").textContent = "Welcome to DOM Toretto's Website!"
 
   // Part 2
 
+document.body.style.backgroundColor = "lightblue"
 
   // Part 3
 
+  document.getElementById("favorite-things").getElementsByTagName("li")[5].textContent = ""
 
   // Part 4
 
+  document.querySelector(".special-title").style.fontSize = "2rem";
 
   // Part 5
 
+  document.getElementById("past-races").getElementsByTagName("li")[3].textContent = ""
 
   // Part 6
 
+  let pastRaces = document.getElementById("past-races")
+  let newLi = document.createElement("li")
+  newLi.appendChild(document.createTextNode("Atlanta"))
+  pastRaces.appendChild(newLi)
 
   // Part 7
+
+let newBlogPostDiv = document.createElement('div');
+newBlogPostDiv.className = 'blog-post purple';
+
+const h2Element = document.createElement('h1');
+const h2Text = document.createTextNode('Atlanta');
+h2Element.appendChild(h2Text);
+
+const pElement = document.createElement('p');
+const pText = document.createTextNode('WHY ARE THERE ZOMBIES HERE?? (WALKING DEAD REFERENCE ANYONE?)');
+pElement.appendChild(pText);
+
+newBlogPostDiv.appendChild(h2Element);
+newBlogPostDiv.appendChild(pElement);
+
+document.querySelector(".main").appendChild(newBlogPostDiv);
 
 
   // Part 8
 
+  document.querySelector("#quote-title").addEventListener("click", randomQuote())
 
   // Part 9
 
 
+    let blogPostDiv = document.querySelectorAll('.blog-post');
 
+  blogPostDiv.forEach((evt) => {
+    evt.addEventListener('mouseout', () => {
+      evt.className = 'blog-post purple';
+    });
+    evt.addEventListener('mouseenter', () => {
+      evt.className = 'blog-post red';
+    });
+  });
 
-});
+})
